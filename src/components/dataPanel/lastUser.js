@@ -1,7 +1,19 @@
-import React from "react";
+import React, {useState ,useEffect} from "react";
 
 function LastUser(props){
     
+    const [user, setUser] = useState([]);
+
+    useEffect(() => {
+		
+        fetch("http://localhost:3001/usuarios")
+		    .then(response => response.json())
+			.then(data => {
+				setUser(data.data.pop())
+				console.log(data.data.pop().img)
+            })
+			.catch(error => console.error(error));
+	}, [])
 
     return(
         <div className="col-lg-6 mb-4">
@@ -11,8 +23,11 @@ function LastUser(props){
                 </div>
                 <div className="card-body">
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src="assets/images/product_dummy.svg" alt="image dummy"/>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={user.img} alt="image dummy"/>
                     </div>
+                    <h4>{user.nombre}</h4>
+                    <h5>{user.usuario}</h5>
+                    <h5>{user.mail}</h5>
                 </div>
             </div>
         </div>
