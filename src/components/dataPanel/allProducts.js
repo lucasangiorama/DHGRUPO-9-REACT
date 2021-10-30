@@ -1,4 +1,5 @@
 import React, {useState ,useEffect} from "react";
+import "../../imagenes.css"
 
 function AllProducts(props){
     
@@ -44,7 +45,7 @@ function AllProducts(props){
             let img = producto.img.split(";")[0]
             productos.push( 
                 <div key={i}>  
-                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={"  http://localhost:3001/img/" + img}  alt="image dummy" key={i}/>
+                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" id="imagen-all-product" src={"  http://localhost:3001/img/" + img}  alt="image dummy" key={i}/>
                     <h4>{producto.titulo}</h4>
                     <p>${producto.precio}</p>
                 </div>)

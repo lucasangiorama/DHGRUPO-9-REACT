@@ -1,4 +1,6 @@
 import React, {useState ,useEffect} from "react";
+import "../../imagenes.css"
+
 
 function LastUser(props){
     
@@ -24,7 +26,7 @@ function LastUser(props){
                 </div>
                 <div className="card-body">
                     <div className="text-center">
-                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={"  http://localhost:3001/img/" + user.img} ></img>
+                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" id="imagen-las-user" src={"  http://localhost:3001/img/" + user.img} ></img>
                     </div>
                     <h4>{user.nombre}</h4>
                     <h5>{user.usuario}</h5>

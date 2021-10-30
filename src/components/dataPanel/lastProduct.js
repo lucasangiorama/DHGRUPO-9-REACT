@@ -1,4 +1,5 @@
 import React, {useState ,useEffect} from "react";
+import "../../imagenes.css"
 
 
 function LastProduct() {
@@ -43,7 +44,7 @@ function LastProduct() {
                     </div>
                     <div className="card-body">
                         <div className="text-center">
-                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={"  http://localhost:3001/img/" + imagen} alt="image dummy"/>
+                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" id="imagen-last-product" src={"  http://localhost:3001/img/" + imagen} alt="image dummy"/>
                         </div>
                         <h4>{product.titulo}</h4>
                         <p>{product.descripcion}</p> 
